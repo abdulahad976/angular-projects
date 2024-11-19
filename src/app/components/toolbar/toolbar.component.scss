@@ -1,0 +1,104 @@
+@import '../../../styles/';
+
+.toolbar-container{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr auto;
+    background-color:blue;
+    color: white;
+
+    @include box-shadow();
+    @media screen and (max-width: $tablet) {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+:host ::ng-deep {
+    ul{
+        display: grid;
+        grid-gap: 10px;
+        grid-auto-flow: column;
+    li{
+        display: inline;
+    }
+        
+    }
+
+
+}
+
+
+
+// @import '../../../styles/';
+
+// .toolbar-container {
+//     display: grid;
+//     grid-gap: 10px;
+//     font-size: 25px;
+//     grid-template-columns: 1fr auto;
+//     padding: 10px;
+//     background-color: rgb(84, 228, 79);
+//     color: black;
+//     align-items: center;
+
+//     @media screen and (max-width: 768px) {
+//         grid-template-columns: 1fr;
+//         text-align: center;
+        
+//         .toolbar-actions {
+//             display: flex;
+//             flex-direction: column;
+//             align-items: center;
+//             gap: 10px;
+//         }
+//     }
+// }
+
+// :host ::ng-deep {
+//     ul {
+//         gap: 20px;
+//         display: flex;
+//         flex-direction: row;
+//         align-items: center;
+//         list-style-type: none;
+//         padding: 10px;
+//         color: rgb(233, 4, 4);
+
+//         @media screen and (max-width: 768px) {
+//             flex-direction: column;
+//             gap: 15px;
+
+//             li {
+//                 display: flex;
+//                 align-items: center;
+//                 gap: 10px;
+
+//                 .icon {
+//                     width: 24px;
+//                     height: 24px;
+//                     margin-right: 10px;
+//                 }
+//             }
+//         }
+//     }
+
+//     ul li {
+//         font-weight: bold;
+//         font-size: 20px;
+
+        
+//         &:hover {
+//             opacity: 0.7;
+//             cursor: pointer;
+//         }
+//     }
+// }
+
+// @media screen and (max-width: 768px) {
+//     :host ::ng-deep ul li {
+//         padding: 10px;
+//         min-height: 44px; 
+//         min-width: 44px;
+//     }
+// }
