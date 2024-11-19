@@ -9,6 +9,11 @@
     </ul>
 </app-toolbar>
 
+<app-card [iconClasses]="'fas fa-info-circle'" [title]="'Progress-bar'" [subTitle]="'Components'">
+    <app-progressbar body></app-progressbar>
+
+    <!-- <button footer (click)="progressValue=75">Update</button> -->
+</app-card>
 
 <app-card [iconClasses]="'fas fa-info-circle'" [title]="'Accordian'" [subTitle]="'Components'">
     <app-accordian body [items] = "accordianItems"></app-accordian>
