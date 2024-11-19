@@ -10,8 +10,12 @@
 </app-toolbar>
 
 
-<app-card [iconClasses]="'fas fa-info-circle'" [title]="'Card'" [subTitle]="'Components'">
+<app-card [iconClasses]="'fas fa-info-circle'" [title]="'Accordian'" [subTitle]="'Components'">
+    <app-accordian body [items] = "accordianItems"></app-accordian>
+</app-card>
 
+
+<app-card [iconClasses]="'fas fa-info-circle'" [title]="'Card'" [subTitle]="'Components'">
 <p body>Body Content</p>
 <p footer>Footer Content</p>
 </app-card>
