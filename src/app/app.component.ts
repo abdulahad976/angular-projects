@@ -5,11 +5,12 @@ import { CardComponent } from './components/card/card/card.component';
 import { AccordianComponent } from './components/accordian/accordian/accordian.component';
 import { AccordianItem } from './accordian-item-interface';
 import { ProgressbarComponent } from './components/progressbar/progressbar/progressbar.component';
+import { StarRatingsComponent } from './components/star-rating/star-ratings/star-ratings.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ToolbarComponent, CardComponent,AccordianComponent, ProgressbarComponent],
+  imports: [RouterOutlet, ToolbarComponent, CardComponent,AccordianComponent, ProgressbarComponent, StarRatingsComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
