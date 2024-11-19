@@ -1,0 +1,16 @@
+<div class="progress-container">
+    <div class="progress-wrapper">
+      <progress  [value]="myValue" [max]="maxValue"></progress>
+      <span class="progress-label">{{myValue}}%</span> 
+    </div>
+  
+    <div class="input-container">
+      <small>Enter value to update:</small>
+      <input type="number" [(ngModel)]="value" placeholder="Enter a number" />
+    </div>
+  
+    <div class="button-container">
+      <button (click)="update(value)">Update</button>
+    </div>
+  </div>
+  
