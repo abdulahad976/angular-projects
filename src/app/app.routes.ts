@@ -15,7 +15,7 @@ export const routes: Routes = [
     },
     {
         path: 'pipes',
-        component : PipesDocumentationComponent
+        loadChildren: ()=> import('./pipes/pipes/pipes.module').then((m)=>m.PipesModule)
     },
     {
         path: 'directives',
