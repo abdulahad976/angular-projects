@@ -1,4 +1,13 @@
 <app-card
+    [iconClasses]="'fas fa-info-circle'" [title]="'Credit Card Input'" [subTitle]="'Pipes'">
+    <div body> 
+        <app-creditcardinput [creditCardNumber] = "'487878787878788'" [isReadOnly] = "true"></app-creditcardinput>
+        <app-creditcardinput [creditCardNumber] = "'6878787878787789'" [isReadOnly] = "true"></app-creditcardinput>
+    </div>
+</app-card>
+
+
+<app-card
     [iconClasses]="'fas fa-info-circle'" [title]="'Credit Card Formatter'" [subTitle]="'Pipes'">
     <div body> 
        <h3 style="color: green;"> {{'1234567890123456' | creditcardformatter}}</h3>

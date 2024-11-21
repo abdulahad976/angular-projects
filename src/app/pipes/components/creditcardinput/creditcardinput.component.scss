@@ -1,0 +1,65 @@
+.credit-card-input-container {
+    $border-radius: 8px;
+    $transition-speed: 0.3s;
+    $input-height: 50px;
+
+    .input-container {
+      position: relative;
+      width: 100%;
+      max-width: 400px;
+      transition: all $transition-speed ease;
+  
+      &.amex {
+        i { color: #108168; }
+        input { border-color: #108168; }
+      }
+  
+      &.visa {
+        i { color: #1a5ba3; }
+        input { border-color: #1a5ba3; }
+      }
+  
+      &.mastercard {
+        i { color: #eb001b; }
+        input { border-color: #eb001b; }
+      }
+  
+      &.discover {
+        i { color: #f37f25; }
+        input { border-color: #f37f25; }
+      }
+  
+      input {
+
+        width: 100%;
+        height: $input-height;
+        padding: 10px 10px 10px 50px;
+        border: 2px solid #cbd5e1;
+        border-radius: $border-radius;
+        font-size: 16px;
+        outline: none;
+        transition: all $transition-speed ease;
+    
+  
+        &:focus {
+          border-color: #3b82f6;
+          box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+        }
+  
+        &:read-only {
+          background-color: #f1f5f9;
+          cursor: not-allowed;
+        }
+      }
+  
+      i {
+        position: absolute;
+        top: 50%;
+        left: 15px;
+        transform: translateY(-50%);
+        color: #06090e;
+        font-size: 24px;
+        transition: color $transition-speed ease;
+      }
+    }
+  }
