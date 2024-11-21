@@ -1,4 +1,13 @@
 <app-card
+    [iconClasses]="'fas fa-info-circle'" [title]="'Credit Card Formatter'" [subTitle]="'Pipes'">
+    <div body> 
+       <h3 style="color: green;"> {{'1234567890123456' | creditcardformatter}}</h3>
+       <h3 style="color: red;"> {{'1vb23456783452s3' | creditcardformatter}} </h3>
+    </div>
+</app-card>
+
+
+<app-card
     [iconClasses]="'fas fa-info-circle'" [title]="'Truncate'" [subTitle]="'Pipes'">
     <p body>
         {{
