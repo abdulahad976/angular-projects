@@ -17,10 +17,8 @@ export class CreditcardinputComponent {
     return this.readOnly;
   }
   @Input() public set isReadOnly(value: boolean) {
-    if(this.creditCardNumber.length === 16){
       this.creditCardNumber = value ?  this.formatReadOnlyCCNum(this.creditCardNumber) : this.creditCardNumber;
       this.readOnly = value
-    }
  
    
   }

@@ -6,12 +6,14 @@ import { StarRatingsComponent } from '../../star-rating/star-ratings/star-rating
 import { ProgressbarComponent } from '../../progressbar/progressbar/progressbar.component';
 import { AccordianItem } from '../../../accordian-item-interface';
 import { LoaderComponent } from '../../loader/loader.component';
+import { TextloaderComponent } from '../../textloader/textloader.component';
+import { LoaderType } from '../../../Models/loader-type.enum';
 
 @Component({
   selector: 'app-home-route',
   standalone: true,
   imports: [ToolbarComponent, CardComponent,AccordianComponent,
-    ProgressbarComponent, StarRatingsComponent, LoaderComponent],
+    ProgressbarComponent, StarRatingsComponent, LoaderComponent, TextloaderComponent],
  templateUrl: './home-route.component.html',
   styleUrl: './home-route.component.scss'
 })
@@ -37,4 +39,7 @@ export class HomeRouteComponent {
       isExpanded: false
     }
 ]
+
+
+public loaderType = LoaderType.Loading;
 }
