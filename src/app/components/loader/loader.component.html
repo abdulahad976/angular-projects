@@ -1,0 +1,14 @@
+<div class="loader-overlay" [style.display]="isLoading ? 'flex' : 'none'">
+    <div class="loader-container">
+        <div class="loader">
+            <div class="circular"></div>
+            <div class="stop-button" (click)="stopLoading()">
+                <div class="stop-icon"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div style="width: 100%; text-align: center;">
+    <button class="display-loader-btn" (click)="startLoading()">Display Loader</button>
+</div>
