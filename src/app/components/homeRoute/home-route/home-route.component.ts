@@ -5,12 +5,13 @@ import { AccordianComponent } from '../../accordian/accordian/accordian.componen
 import { StarRatingsComponent } from '../../star-rating/star-ratings/star-ratings.component';
 import { ProgressbarComponent } from '../../progressbar/progressbar/progressbar.component';
 import { AccordianItem } from '../../../accordian-item-interface';
+import { LoaderComponent } from '../../loader/loader.component';
 
 @Component({
   selector: 'app-home-route',
   standalone: true,
   imports: [ToolbarComponent, CardComponent,AccordianComponent,
-    ProgressbarComponent, StarRatingsComponent],
+    ProgressbarComponent, StarRatingsComponent, LoaderComponent],
  templateUrl: './home-route.component.html',
   styleUrl: './home-route.component.scss'
 })

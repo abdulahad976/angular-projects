@@ -1,1 +1,27 @@
-<p>pipes-documentation works!</p>
+<app-card
+    [iconClasses]="'fas fa-info-circle'" [title]="'Truncate'" [subTitle]="'Pipes'">
+    <p body>
+        {{
+            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro commodi doloribus necessitatibus dolor sunt
+            nulla deserunt, quam laudantium. Libero impedit nesciunt maiores eveniet consequatur voluptates repellendus
+            doloribus perferendis labore magnam ' | truncate : 25
+        }}
+    </p>
+</app-card>
+
+<app-card
+    [iconClasses]="'fas fa-info-circle'" [title]="'Sort By Key'" [subTitle]="'Pipes'">
+    <div body>
+        <h3>String Accending</h3>
+        <p *ngFor="let obj of objectArray | sortByKey:'value'">
+            {{obj.value}}
+        </p>
+
+        <h3>String Descending</h3>
+        <p *ngFor="let obj of objectArray | sortByKey:'value':'desc'">
+            {{obj.value}}
+        </p>
+    </div>
+
+  
+</app-card> 
