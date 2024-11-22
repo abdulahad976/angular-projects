@@ -8,12 +8,13 @@ import { AccordianItem } from '../../../accordian-item-interface';
 import { LoaderComponent } from '../../loader/loader.component';
 import { TextloaderComponent } from '../../textloader/textloader.component';
 import { LoaderType } from '../../../Models/loader-type.enum';
+import { TwitterpostComponent } from '../../twitterpost/twitterpost.component';
 
 @Component({
   selector: 'app-home-route',
   standalone: true,
   imports: [ToolbarComponent, CardComponent,AccordianComponent,
-    ProgressbarComponent, StarRatingsComponent, LoaderComponent, TextloaderComponent],
+    ProgressbarComponent, StarRatingsComponent, LoaderComponent, TextloaderComponent,TwitterpostComponent],
  templateUrl: './home-route.component.html',
   styleUrl: './home-route.component.scss'
 })
@@ -41,5 +42,5 @@ export class HomeRouteComponent {
 ]
 
 
-public loaderType = LoaderType.Loading;
+public loaderType = LoaderType.Loading ;
 }
