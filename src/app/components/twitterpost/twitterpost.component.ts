@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, inject } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-twitterpost',
@@ -14,6 +15,8 @@ export class TwitterpostComponent {
 
 
 constructor(public titleService : Title) {}
+router = inject(Router);
+
 
 public get twitterUrl(): string {
   const base = this.getBaseWithHashTagsAndRoute();
@@ -36,11 +39,18 @@ public get linkedinUrl(): string {
 
 
 private getBaseWithHashTagsAndRouteForLinkedIn(){ 
-  const route = encodeURI(this.baseHref);
+  const route = encodeURIComponent(this.baseHref);
   const hashTags = this.hashTags.join(',');
   return `https://www.linkedin.com/sharing/share-offsite/?url=&hashtags=${encodeURIComponent(hashTags)}&related=abdul-ahad-b2b207201`;
 
 }
 
+  get mylinkedinUrl(): string {
+    const base = 'https://www.linkedin.com/shareArticle?mini=true';
+    const currentSite = `&url=https://www.linkedin.com${this.router.url}`;
 
+    return `${base}${currentSite}`
+  }
 }
+
+
