@@ -12,6 +12,7 @@ import { TwitterpostComponent } from '../../twitterpost/twitterpost.component';
 import { ModalComponent } from '../../modal/modal.component';
 import { QuoteComponent } from '../../quote/quote.component';
 import { ToggleComponent } from '../../toggle/toggle.component';
+import { RichTextViewerComponent } from '../../rich-text-viewer/rich-text-viewer.component';
 
 @Component({
   selector: 'app-home-route',
@@ -19,7 +20,7 @@ import { ToggleComponent } from '../../toggle/toggle.component';
   imports: [ToolbarComponent, CardComponent,AccordianComponent,
     ProgressbarComponent, StarRatingsComponent, LoaderComponent,
     TextloaderComponent,TwitterpostComponent, ModalComponent,
-    QuoteComponent, ToggleComponent],
+    QuoteComponent, ToggleComponent, RichTextViewerComponent],
  templateUrl: './home-route.component.html',
   styleUrl: './home-route.component.scss'
 })
