@@ -9,12 +9,14 @@ import { LoaderComponent } from '../../loader/loader.component';
 import { TextloaderComponent } from '../../textloader/textloader.component';
 import { LoaderType } from '../../../Models/loader-type.enum';
 import { TwitterpostComponent } from '../../twitterpost/twitterpost.component';
+import { ModalComponent } from '../../modal/modal.component';
 
 @Component({
   selector: 'app-home-route',
   standalone: true,
   imports: [ToolbarComponent, CardComponent,AccordianComponent,
-    ProgressbarComponent, StarRatingsComponent, LoaderComponent, TextloaderComponent,TwitterpostComponent],
+    ProgressbarComponent, StarRatingsComponent, LoaderComponent,
+    TextloaderComponent,TwitterpostComponent, ModalComponent],
  templateUrl: './home-route.component.html',
   styleUrl: './home-route.component.scss'
 })

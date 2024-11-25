@@ -1,3 +1,16 @@
+<app-card [iconClasses]="'fas fa-info-circle'" [title]="'Modal'" [subTitle]="'Components'">
+    <div body>
+        <app-modal [title]="'Modal Example'" #modal>
+            <p>Some Content</p>
+        </app-modal>
+
+    </div>
+
+    <div footer>
+        <button (click)="modal.open()">Call Modal</button>
+    </div>
+</app-card>
+
 <app-card [iconClasses]="'fas fa-info-circle'" [title]="'Twitter Post'" [subTitle]="'Components'">
     <app-twitterpost body></app-twitterpost>
 </app-card>
