@@ -1,4 +1,18 @@
 <app-card
+    [iconClasses]="'fas fa-info-circle'" [title]="'Flatten'" [subTitle]="'Pipes'">
+    <div body> 
+        {{flattenData | flatten}}
+    </div>
+
+    <div class="footer" footer>
+        <button (click)="modifyFlatten()">Modify</button>
+        <button (click)="reassignFlatten()">Reassign</button>
+    </div>
+</app-card>
+
+
+
+<app-card
     [iconClasses]="'fas fa-info-circle'" [title]="'Credit Card Input'" [subTitle]="'Pipes'">
     <div body> 
         <app-creditcardinput [creditCardNumber] = "'5878787878787888'" [isReadOnly] = "false"></app-creditcardinput>
