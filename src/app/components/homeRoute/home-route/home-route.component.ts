@@ -11,13 +11,15 @@ import { LoaderType } from '../../../Models/loader-type.enum';
 import { TwitterpostComponent } from '../../twitterpost/twitterpost.component';
 import { ModalComponent } from '../../modal/modal.component';
 import { QuoteComponent } from '../../quote/quote.component';
+import { ToggleComponent } from '../../toggle/toggle.component';
 
 @Component({
   selector: 'app-home-route',
   standalone: true,
   imports: [ToolbarComponent, CardComponent,AccordianComponent,
     ProgressbarComponent, StarRatingsComponent, LoaderComponent,
-    TextloaderComponent,TwitterpostComponent, ModalComponent, QuoteComponent],
+    TextloaderComponent,TwitterpostComponent, ModalComponent,
+    QuoteComponent, ToggleComponent],
  templateUrl: './home-route.component.html',
   styleUrl: './home-route.component.scss'
 })
@@ -46,4 +48,5 @@ export class HomeRouteComponent {
 
 
 public loaderType = LoaderType.Loading ;
+public toggleValue = false
 }
