@@ -7,11 +7,13 @@ import { SortByKeyPipe } from '../sortByKey/sort-by-key.pipe';
 import { CreditcardformatterPipe } from '../Credit-Card-Formatter/creditcardformatter.pipe';
 import { CreditcardinputComponent } from '../components/creditcardinput/creditcardinput.component';
 import { FlattenPipe } from '../flattenPipe/flatten.pipe';
+import { FilterTermPipe } from '../filterTerm/filter-term.pipe';
 
 @Component({
   selector: 'app-pipes-documentation',
   standalone: true,
-  imports: [CardComponent, NgFor, TruncatePipe, SortByKeyPipe, CreditcardformatterPipe,CreditcardinputComponent, FlattenPipe],
+  imports: [CardComponent, NgFor, TruncatePipe, SortByKeyPipe, CreditcardformatterPipe,
+            CreditcardinputComponent, FlattenPipe, FilterTermPipe],
   templateUrl: './pipes-documentation.component.html',
   styleUrl: './pipes-documentation.component.scss'
 })

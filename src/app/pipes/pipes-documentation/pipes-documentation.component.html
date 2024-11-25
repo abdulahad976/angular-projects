@@ -2,6 +2,14 @@
 <hr>
 
 <app-card
+    [iconClasses]="'fas fa-info-circle'" [title]="'Filter Term'" [subTitle]="'Pipes'">
+    <div body> 
+       {{['Hello', 'World', 'Hello World'] | filterTerm:'Hello'}}
+    </div>
+</app-card>
+
+
+<app-card
     [iconClasses]="'fas fa-info-circle'" [title]="'Flatten'" [subTitle]="'Pipes'">
     <div body> 
         {{flattenData | flatten}}
