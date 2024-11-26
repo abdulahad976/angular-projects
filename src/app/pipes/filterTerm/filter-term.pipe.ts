@@ -8,7 +8,9 @@ export class FilterTermPipe implements PipeTransform {
 
   transform(items : string[], searchTerm : string = ''): string {
     
+
     return items.filter(item => item.toLowerCase().includes(searchTerm.toLowerCase())).join(', ');
+    
   }
 
 }
