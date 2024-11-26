@@ -1,12 +1,21 @@
 <h1>Components</h1>
 <hr>
 
+<app-card [iconClasses]="'fas fa-info-circle'" [title]="'Search List'" [subTitle]="'Components'">
+       
+        <app-search-list body [items] = "['Pakistan', 'United States', 'India', 'Nepal', 'Sri Lanka']">
+
+        </app-search-list>    
+</app-card>
+
+
+
+
+
 <app-card [iconClasses]="'fas fa-info-circle'" [title]="'Debounce Search '" [subTitle]="'Components'">
 
     <div body>
-        <app-debounce-search [placeholder]= "' Enter any Text'" (searchUpdate) = debounceSearch($event)> 
-
-        </app-debounce-search>
+        <app-debounce-search  (searchUpdate) = debounceSearch($event)> </app-debounce-search>
     </div>
 
 </app-card>

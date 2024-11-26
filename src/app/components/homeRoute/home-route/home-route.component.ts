@@ -14,6 +14,7 @@ import { QuoteComponent } from '../../quote/quote.component';
 import { ToggleComponent } from '../../toggle/toggle.component';
 import { RichTextViewerComponent } from '../../rich-text-viewer/rich-text-viewer.component';
 import { DebounceSearchComponent } from '../../debounce-search/debounce-search.component';
+import { SearchListComponent } from '../../search-list/search-list.component';
 
 @Component({
   selector: 'app-home-route',
@@ -22,7 +23,7 @@ import { DebounceSearchComponent } from '../../debounce-search/debounce-search.c
     ProgressbarComponent, StarRatingsComponent, LoaderComponent,
     TextloaderComponent,TwitterpostComponent, ModalComponent,
     QuoteComponent, ToggleComponent, RichTextViewerComponent,
-    DebounceSearchComponent]
+    DebounceSearchComponent, SearchListComponent]
     ,
  templateUrl: './home-route.component.html',
   styleUrl: './home-route.component.scss'
