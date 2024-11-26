@@ -18,16 +18,18 @@ import { SearchListComponent } from '../../search-list/search-list.component';
 import { CounterComponent } from '../../counter/counter.component';
 import { TableComponent } from '../../table/table.component';
 import { PagingComponent } from '../../paging/paging.component';
+import { TabsComponent } from '../../tabs/tabs.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-home-route',
   standalone: true,
-  imports: [ToolbarComponent, CardComponent,AccordianComponent,
+  imports: [CommonModule, ToolbarComponent, CardComponent,AccordianComponent,
     ProgressbarComponent, StarRatingsComponent, LoaderComponent,
     TextloaderComponent,TwitterpostComponent, ModalComponent,
     QuoteComponent, ToggleComponent, RichTextViewerComponent,
     DebounceSearchComponent, SearchListComponent, CounterComponent,
-    TableComponent, PagingComponent]
+    TableComponent, PagingComponent, TabsComponent]
     ,
  templateUrl: './home-route.component.html',
   styleUrl: './home-route.component.scss'
@@ -60,10 +62,16 @@ export class HomeRouteComponent {
     public toggleValue = false
 
 
+    public tabs: {title: string, active: boolean}[] = [
+      {title: 'Table tab', active: true},
+      {title: 'Paging tab', active: true},
+      {title: 'Counter tab', active: false}
+
+    ]
+    public selectedTab = 0;
     debounceSearch(value: string) {
       console.log(value);
     }
-
 
 
 
