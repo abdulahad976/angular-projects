@@ -16,6 +16,7 @@ import { RichTextViewerComponent } from '../../rich-text-viewer/rich-text-viewer
 import { DebounceSearchComponent } from '../../debounce-search/debounce-search.component';
 import { SearchListComponent } from '../../search-list/search-list.component';
 import { CounterComponent } from '../../counter/counter.component';
+import { TableComponent } from '../../table/table.component';
 
 @Component({
   selector: 'app-home-route',
@@ -24,7 +25,8 @@ import { CounterComponent } from '../../counter/counter.component';
     ProgressbarComponent, StarRatingsComponent, LoaderComponent,
     TextloaderComponent,TwitterpostComponent, ModalComponent,
     QuoteComponent, ToggleComponent, RichTextViewerComponent,
-    DebounceSearchComponent, SearchListComponent, CounterComponent]
+    DebounceSearchComponent, SearchListComponent, CounterComponent,
+    TableComponent]
     ,
  templateUrl: './home-route.component.html',
   styleUrl: './home-route.component.scss'

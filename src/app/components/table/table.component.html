@@ -1,0 +1,14 @@
+<table *ngIf="tableData && tableData.length ">
+    <thead>
+        <tr>
+            <th *ngFor="let header of tableData[0] | keyvalue"> {{header.key}}</th>
+        </tr>
+    </thead>
+
+    <tbody *ngFor="let row of tableData">
+        <tr>
+            <td *ngFor="let data of row | keyvalue">{{data.value}}</td>
+        </tr>
+        
+    </tbody>
+</table>
