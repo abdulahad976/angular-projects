@@ -1,6 +1,13 @@
 <h1>Components</h1>
 <hr>
 
+<app-card [iconClasses]="'fas fa-info-circle'" [title]="'Counter Field'" [subTitle]="'Components'">
+       
+    <app-counter body >
+
+    </app-counter>    
+</app-card>
+
 <app-card [iconClasses]="'fas fa-info-circle'" [title]="'Search List'" [subTitle]="'Components'">
        
         <app-search-list body [items] = "['Pakistan', 'United States', 'India', 'Nepal', 'Sri Lanka']">

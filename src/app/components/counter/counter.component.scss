@@ -1,0 +1,33 @@
+@import '../../../styles';
+
+
+
+.counter-container{
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    input[type=number] {
+        padding: 5px;
+        -moz-appearance: textfield;
+        width: 12%;
+
+    }
+
+    button{
+        padding: 5px 8px;
+        color: white;
+
+        &.increment{
+            background-color: $green;
+            border: 1px solid $green;
+        }
+
+        &.decrement{
+            background-color: $red;
+            border: 1px solid $red;
+        }
+    }
+}
