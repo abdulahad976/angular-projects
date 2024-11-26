@@ -17,6 +17,7 @@ import { DebounceSearchComponent } from '../../debounce-search/debounce-search.c
 import { SearchListComponent } from '../../search-list/search-list.component';
 import { CounterComponent } from '../../counter/counter.component';
 import { TableComponent } from '../../table/table.component';
+import { PagingComponent } from '../../paging/paging.component';
 
 @Component({
   selector: 'app-home-route',
@@ -26,7 +27,7 @@ import { TableComponent } from '../../table/table.component';
     TextloaderComponent,TwitterpostComponent, ModalComponent,
     QuoteComponent, ToggleComponent, RichTextViewerComponent,
     DebounceSearchComponent, SearchListComponent, CounterComponent,
-    TableComponent]
+    TableComponent, PagingComponent]
     ,
  templateUrl: './home-route.component.html',
   styleUrl: './home-route.component.scss'

@@ -1,0 +1,31 @@
+@import '../../../styles';
+
+ul{
+    display: flex;
+    padding: 5px;
+    justify-content: center;
+
+    li{
+        display: inline;
+        list-style: inline;
+        margin: 3px;
+
+        button{
+            border: none;
+            background-color: white;
+
+            @include box-shadow();
+            height: 40px;
+            width: 40px;
+
+            border-radius: 50%;
+            font-size: 1.2rem;
+
+            &.current-page{
+                background-color: $blue;
+                color: rgb(176, 231, 130);
+                transition: all 0.3s;
+            }
+        }
+    }
+}
