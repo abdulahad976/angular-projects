@@ -1,4 +1,4 @@
-button {
+#btn2 {
     font-size: 16px;
     padding: 10px 20px;
     margin: 10px;
@@ -8,27 +8,27 @@ button {
     transition: background-color 0.3s, transform 0.2s;
   }
   
-  button:first-of-type {
+  #btn2:first-of-type {
     background-color: #4CAF50; 
     color: white;
   }
   
-  button:first-of-type:hover {
+  #btn2:first-of-type:hover {
     background-color: #4CAF50; 
     transform: scale(1.05); 
   }
   
-  button:last-of-type {
+  #btn2:last-of-type {
     background-color: #4CAF50; 
     color: white;
   }
   
-  button:last-of-type:hover {
+  #btn2:last-of-type:hover {
     background-color: #4CAF50; 
     transform: scale(1.05); 
   }
   
-  button:focus {
+  #btn2:focus {
     outline: 2px solid #007BFF;
   }
 
@@ -36,3 +36,15 @@ button {
     margin-top: 25px;
   }
   
+
+  button{
+    font-size: 16px;
+    padding: 10px 20px;
+    margin: 10px;
+    color: white;
+    // border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    background-color: #4CAF50; 
+  }

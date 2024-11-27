@@ -1,8 +1,16 @@
 <h1>Directives</h1>
 <hr>
+<app-card [iconClasses] = "'fas fa-info-circle'" [title] = "'Ripple'" [subTitle] = "'Directives'">
+    <div body>
+        <button  appRipple ="ripple2">
+            Ripple Button
+        </button>
+    </div>
+</app-card>
+
 
 <app-card [iconClasses] = "'fas fa-info-circle'" [title] = "'Debounce Click'" [subTitle] = "'Directives'">
     <div body>
-        <button appDebounceClick (debounceClick) = "log()">Check Log</button>
+        <button id="btn2" appDebounceClick (debounceClick) = "log()">Check Log</button>
     </div>
 </app-card>

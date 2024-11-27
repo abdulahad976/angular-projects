@@ -52,7 +52,7 @@ export class PagingComponent {
     // }
 
     if(this.currentPage +1 < this.totalPages && this.currentPage === 1){
-      pages.push(this.currentPage + 3)
+      pages.push(this.currentPage + 2)
     }
 
     return pages
