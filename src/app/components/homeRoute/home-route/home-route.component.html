@@ -11,9 +11,10 @@
 <app-card [iconClasses]="'fas fa-info-circle'" [title]="'Tabs'" [subTitle]="'Components'">
        
     <app-tabs body [tabs] = "tabs" (selectedTabIndex) = "selectedTab = $event;" >
-        <app-table   *ngIf="selectedTab === 0"></app-table>    
+        <app-counter *ngIf="selectedTab === 0" > </app-counter>  
         <app-paging  *ngIf="selectedTab === 1" [totalItems] = "400"></app-paging>
-        <app-counter *ngIf="selectedTab === 2" > </app-counter>  
+        <app-table   *ngIf="selectedTab === 2"></app-table>    
+
     </app-tabs>    
 </app-card>
 
