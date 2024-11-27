@@ -66,7 +66,6 @@ export class HomeRouteComponent {
     public tabs: {title: string, active: boolean}[] = [
       {title: 'Counter tab', active: true},
       {title: 'Paging tab', active: false},
-
       {title: 'Table tab', active: false},
 
     ]
