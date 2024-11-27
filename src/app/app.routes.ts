@@ -3,6 +3,7 @@ import { HomeRouteComponent } from './components/homeRoute/home-route/home-route
 import { ServicesDocumentationComponent } from './services/services-documentation/services-documentation.component';
 import { PipesDocumentationComponent } from './pipes/pipes-documentation/pipes-documentation.component';
 import { DirectiveDocumentationComponent } from './directive/directive-documentation/directive-documentation.component';
+import { OtherDocumentationComponent } from './Others/OthersDocumentation/other-documentation/other-documentation.component';
 
 export const routes: Routes = [
     {
@@ -20,5 +21,9 @@ export const routes: Routes = [
     {
         path: 'directives',
         component: DirectiveDocumentationComponent
+    },
+    {
+        path: 'others',
+        component: OtherDocumentationComponent
     }
 ];

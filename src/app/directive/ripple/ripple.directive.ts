@@ -10,7 +10,6 @@ export class RippleDirective {
 
   constructor(public element: ElementRef, public renderer: Renderer2) {}
     @HostListener('mouseenter') onHover(){
-      console.log(this.element);
       this.renderer.addClass(this.element.nativeElement, this.appRipple)
     }
 }
