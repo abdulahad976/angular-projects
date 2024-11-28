@@ -29,18 +29,16 @@ export class SortTableComponent {
         this.sortBoolean(key);
         break;
 
-        case typeof value === 'number':
-          this.sortNumber(key);
-
+      case typeof value === 'number':
+        this.sortNumber(key);
         break;
 
-
-        case this.isDate(value):
-          this.sortDate(key);
+      case this.isDate(value):
+        this.sortDate(key);
         break;
         
-        case typeof value === 'string':
-          this.sortString(key);
+      case typeof value === 'string':
+        this.sortString(key);
         break;
     }
   }
@@ -90,8 +88,8 @@ export class SortTableComponent {
   } 
   private sortString(key: string): void {
     this.tableData.sort((i: any, j: any) => {
-      const value1 = String(i[key]).toUpperCase();
-        const value2 = String(j[key]).toUpperCase();
+      const value1 = i[key].toUpperCase();
+        const value2 = j[key].toUpperCase();
 
         if(this.sortDirection){
           if(value1 > value2){

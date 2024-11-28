@@ -1,0 +1,16 @@
+<!-- <div [tableData] = "tableData">
+
+</div> -->
+
+
+
+<ag-grid-angular class="ag-theme-quartz" style="height: 500px; width: 100%;"
+    [rowData]="tableData"
+    [gridOptions] = "gridOptions"
+    [columnDefs]="colDefs"
+    [pagination]=true
+    [defaultColDef]="defaultColDef"
+    [paginationPageSize] = "9"
+    [paginationPageSizeSelector]= "paginationPageSizeSelector"
+    >
+</ag-grid-angular>
