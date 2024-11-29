@@ -33,9 +33,10 @@
             "styles": [
               "src/styles.scss",
               "ag-grid-community/styles/ag-grid.css",
-              "ag-grid-community/styles/ag-theme-quartz.css"
+              "ag-grid-community/styles/ag-theme-quartz.css",
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
-            "scripts": []
+            "scripts": ["./node_modules/bootstrap/dist/js/bootstrap.js"]
           },
           "configurations": {
             "production": {
@@ -93,9 +94,10 @@
             "styles": [
               "src/styles.scss",
               "ag-grid-community/styles/ag-grid.css",
-              "ag-grid-community/styles/ag-theme-quartz.css"
+              "ag-grid-community/styles/ag-theme-quartz.css",
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
-            "scripts": []
+            "scripts": ["./node_modules/bootstrap/dist/js/bootstrap.bundle.js"]
           }
         }
       }
