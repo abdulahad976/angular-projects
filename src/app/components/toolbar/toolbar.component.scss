@@ -4,8 +4,8 @@
     display: grid;
     grid-gap: 10px;
     grid-template-columns: 1fr auto;
-    background-color:blue;
-    color: white;
+    background-color : #007accb6;
+    color: rgb(2, 2, 2);
     padding: 10px;
 
     @include box-shadow();
@@ -17,18 +17,37 @@
 
 :host ::ng-deep {
     ul{
+        margin: 0px 0px 0px 0px;
         display: grid;
-        grid-gap: 10px;
+        grid-gap: 20px;
         grid-auto-flow: column;
+        align-items: center;
+        justify-content: center;
+        
+        a:hover{
+            border-bottom: 2px solid #af634c;
+
+        }
     li{
         display: inline;
-    }
+        border-bottom: 2px solid transparent;
+
+        a{
+            color: black;
+            text-decoration: none;
+            display: inline;
+        }
+    }   
         
     }
 
 
 }
-
+.content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 
 // @import '../../../styles/';

@@ -4,6 +4,8 @@ import { ServicesDocumentationComponent } from './services/services-documentatio
 import { PipesDocumentationComponent } from './pipes/pipes-documentation/pipes-documentation.component';
 import { DirectiveDocumentationComponent } from './directive/directive-documentation/directive-documentation.component';
 import { OtherDocumentationComponent } from './Others/OthersDocumentation/other-documentation/other-documentation.component';
+import { SignupComponent } from './Forms/signup/signup.component';
+import { LoginComponent } from './Forms/login/login.component';
 
 export const routes: Routes = [
     {
@@ -25,5 +27,13 @@ export const routes: Routes = [
     {
         path: 'others',
         component: OtherDocumentationComponent
+    },
+    {
+        path: 'signup',
+        component: SignupComponent  
+    },
+    {
+        path: 'login',
+        component: LoginComponent
     }
 ];
