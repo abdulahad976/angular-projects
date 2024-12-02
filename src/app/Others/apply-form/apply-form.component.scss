@@ -1,0 +1,40 @@
+.bg-gradient {
+    background: linear-gradient(135deg, #f5f7fa 0%, #e6ebf2 100%);
+  }
+  
+  .bg-gradient-primary {
+    background: linear-gradient(45deg, #4a90e2, #3a7bd5);
+  }
+  
+  .bg-gradient-secondary {
+    background: linear-gradient(45deg, #667eea, #764ba2);
+  }
+  
+  body {
+    font-family: 'Inter', 'Segoe UI', Roboto, sans-serif;
+  }
+  
+  .list-group-item {
+    transition: all 0.3s ease;
+  }
+  
+  .list-group-item:hover {
+    background-color: #f8f9fa;
+    transform: translateX(10px);
+  }
+  
+  .badge {
+    font-weight: 600;
+    padding: 0.5em 0.75em;
+  }
+  
+  .btn-primary {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
+  }
