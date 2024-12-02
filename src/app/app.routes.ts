@@ -6,6 +6,7 @@ import { DirectiveDocumentationComponent } from './directive/directive-documenta
 import { OtherDocumentationComponent } from './Others/OthersDocumentation/other-documentation/other-documentation.component';
 import { SignupComponent } from './Forms/signup/signup.component';
 import { LoginComponent } from './Forms/login/login.component';
+import { FormComponent } from './Others/form/form.component';
 
 export const routes: Routes = [
     {
@@ -27,6 +28,10 @@ export const routes: Routes = [
     {
         path: 'others',
         component: OtherDocumentationComponent
+    },
+    {
+        path: 'others/apply',
+        component: FormComponent
     },
     {
         path: 'signup',

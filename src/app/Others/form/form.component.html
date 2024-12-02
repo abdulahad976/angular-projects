@@ -1,0 +1,337 @@
+  <div class="container py-5">
+    <form [formGroup]="jobApplicationForm" (ngSubmit)="onSubmit()" class="job-application-form">
+      <!-- Personal Information Section -->
+      <div formGroupName="personalInfo" class="card mb-4">
+        <div class="card-header bg-primary text-white">
+          <h3 class="mb-0">Personal Information</h3>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label class="form-label">First Name *</label>
+              <input 
+                type="text" 
+                formControlName="firstName" 
+                class="form-control"
+                [class.is-invalid]="jobApplicationForm.get('personalInfo.firstName').invalid && jobApplicationForm.get('personalInfo.firstName').touched"
+              >
+              <div *ngIf="jobApplicationForm.get('personalInfo.firstName').invalid && jobApplicationForm.get('personalInfo.firstName').touched" class="invalid-feedback">
+                First name is required and must be 2-50 characters long.
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label class="form-label">Last Name *</label>
+              <input 
+                type="text" 
+                formControlName="lastName" 
+                class="form-control"
+                [class.is-invalid]="jobApplicationForm.get('personalInfo.lastName').invalid && jobApplicationForm.get('personalInfo.lastName').touched"
+              >
+              <div *ngIf="jobApplicationForm.get('personalInfo.lastName').invalid && jobApplicationForm.get('personalInfo.lastName').touched" class="invalid-feedback">
+                Last name is required and must be 2-50 characters long.
+              </div>
+            </div>
+          </div>
+  
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label class="form-label">Email *</label>
+              <input 
+                type="email" 
+                formControlName="email" 
+                class="form-control"
+                [class.is-invalid]="jobApplicationForm.get('personalInfo.email').invalid && jobApplicationForm.get('personalInfo.email').touched"
+              >
+              <div *ngIf="jobApplicationForm.get('personalInfo.email').invalid && jobApplicationForm.get('personalInfo.email').touched" class="invalid-feedback">
+                Please enter a valid email address.
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label class="form-label">Mobile Number *</label>
+              <input 
+                type="tel" 
+                formControlName="mobile" 
+                class="form-control"
+                [class.is-invalid]="jobApplicationForm.get('personalInfo.mobile').invalid && jobApplicationForm.get('personalInfo.mobile').touched"
+              >
+              <div *ngIf="jobApplicationForm.get('personalInfo.mobile').invalid && jobApplicationForm.get('personalInfo.mobile').touched" class="invalid-feedback">
+                Please enter a valid 10-digit mobile number.
+              </div>
+            </div>
+          </div>
+  
+          <!-- Optional Contact Information -->
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label class="form-label">Alternate Phone (Optional)</label>
+              <input 
+                type="tel" 
+                formControlName="alternatePhone" 
+                class="form-control"
+              >
+            </div>
+            <div class="col-md-6 mb-3">
+              <label class="form-label">LinkedIn Profile (Optional)</label>
+              <input 
+                type="url" 
+                formControlName="linkedin" 
+                class="form-control"
+                [class.is-invalid]="jobApplicationForm.get('personalInfo.linkedin').invalid && jobApplicationForm.get('personalInfo.linkedin').touched"
+              >
+              <div *ngIf="jobApplicationForm.get('personalInfo.linkedin').invalid && jobApplicationForm.get('personalInfo.linkedin').touched" class="invalid-feedback">
+                Please enter a valid LinkedIn profile URL.
+              </div>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <label class="form-label">GitHub Profile (Optional)</label>
+                <input 
+                  type="url" 
+                  formControlName="githubProfile" 
+                  class="form-control"
+                  [class.is-invalid]="jobApplicationForm.get('personalInfo.githubProfile').invalid && jobApplicationForm.get('personalInfo.githubProfile').touched"
+                >
+                <div *ngIf="jobApplicationForm.get('personalInfo.githubProfile').invalid && jobApplicationForm.get('personalInfo.githubProfile').touched" class="invalid-feedback">
+                  Please enter a valid GitHub profile URL.
+                </div>
+              </div>
+          </div>
+  
+          <div formGroupName="address">
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Street Address *</label>
+                <input 
+                  type="text" 
+                  formControlName="street" 
+                  class="form-control"
+                  [class.is-invalid]="jobApplicationForm.get('personalInfo.address.street').invalid && jobApplicationForm.get('personalInfo.address.street').touched"
+                >
+              </div>
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Address Line 2 (Optional)</label>
+                <input 
+                  type="text" 
+                  formControlName="street2" 
+                  class="form-control"
+                >
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label class="form-label">City *</label>
+                <input 
+                  type="text" 
+                  formControlName="city" 
+                  class="form-control"
+                  [class.is-invalid]="jobApplicationForm.get('personalInfo.address.city').invalid && jobApplicationForm.get('personalInfo.address.city').touched"
+                >
+              </div>
+              <div class="col-md-6 mb-3">
+                <label class="form-label">State *</label>
+                <input 
+                  type="text" 
+                  formControlName="state" 
+                  class="form-control"
+                  [class.is-invalid]="jobApplicationForm.get('personalInfo.address.state').invalid && jobApplicationForm.get('personalInfo.address.state').touched"
+                >
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Zip Code *</label>
+                <input 
+                  type="text" 
+                  formControlName="zipCode" 
+                  class="form-control"
+                  [class.is-invalid]="jobApplicationForm.get('personalInfo.address.zipCode').invalid && jobApplicationForm.get('personalInfo.address.zipCode').touched"
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Education Section -->
+      <div class="card mb-4">
+        <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+          <h3 class="mb-0">Education Details</h3>
+          <button type="button" class="btn btn-light" (click)="addEducationEntry()">
+            <i class="bi bi-plus"></i> Add Education
+          </button>
+        </div>
+        <div class="card-body" formArrayName="education">
+          <div *ngFor="let education of educationEntries.controls; let i = index" 
+               [formGroupName]="i" class="mb-3 p-3 border rounded">
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Education Level *</label>
+                <select 
+                  formControlName="level" 
+                  class="form-select"
+                  [class.is-invalid]="education.get('level')?.invalid && education.get('level')?.touched"
+                >
+                  <option value="">Select Education Level</option>
+                  <option *ngFor="let level of educationLevels" [value]="level">
+                    {{ level }}
+                  </option>
+                </select>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Degree Name *</label>
+                <input 
+                  type="text" 
+                  formControlName="degreeName" 
+                  class="form-control"
+                  [class.is-invalid]="education.get('degreeName')?.invalid && education.get('degreeName')?.touched"
+                >
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Institute Name *</label>
+                <input 
+                  type="text" 
+                  formControlName="instituteName" 
+                  class="form-control"
+                  [class.is-invalid]="education.get('instituteName')?.invalid && education.get('instituteName')?.touched"
+                >
+              </div>
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Graduation Year *</label>
+                <input 
+                  type="number" 
+                  formControlName="graduationYear" 
+                  class="form-control"
+                  [class.is-invalid]="education.get('graduationYear')?.invalid && education.get('graduationYear')?.touched"
+                >
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Grade/Percentage *</label>
+                <input 
+                  type="number" 
+                  formControlName="grade" 
+                  class="form-control"
+                  [class.is-invalid]="education.get('grade')?.invalid && education.get('grade')?.touched"
+                >
+              </div>
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Honors (Optional)</label>
+                <input 
+                  type="text" 
+                  formControlName="honors" 
+                  class="form-control"
+                >
+              </div>
+            </div>
+            <div class="text-end">
+              <button 
+                *ngIf="educationEntries.length > 1" 
+                type="button" 
+                class="btn btn-danger" 
+                (click)="removeEducationEntry(i)"
+              >
+                <i class="bi bi-trash"></i> Remove Education
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Skills Section -->
+      <div class="card mb-4">
+        <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+          <h3 class="mb-0">Professional Skills</h3>
+          <button type="button" class="btn btn-light" (click)="addSkillEntry()">
+            <i class="bi bi-plus"></i> Add Skill
+          </button>
+        </div>
+        <div class="card-body" formArrayName="skills">
+          <div *ngFor="let skill of skillEntries.controls; let i = index" 
+               [formGroupName]="i" class="mb-3 p-3 border rounded">
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Skill Name *</label>
+                <input 
+                  type="text" 
+                  formControlName="name" 
+                  class="form-control"
+                  [class.is-invalid]="skill.get('name')?.invalid && skill.get('name')?.touched"
+                >
+              </div>
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Skill Category *</label>
+                <select 
+                  formControlName="category" 
+                  class="form-select"
+                  [class.is-invalid]="skill.get('category')?.invalid && skill.get('category')?.touched"
+                >
+                  <option value="">Select Skill Category</option>
+                  <option *ngFor="let category of skillCategories" [value]="category">
+                    {{ category }}
+                  </option>
+                </select>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Proficiency Level *</label>
+                <select 
+                  formControlName="proficiency" 
+                  class="form-select"
+                  [class.is-invalid]="skill.get('proficiency')?.invalid && skill.get('proficiency')?.touched"
+                >
+                  <option value="">Select Proficiency</option>
+                  <option *ngFor="let level of proficiencyLevels" [value]="level">
+                    {{ level }}
+                  </option>
+                </select>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Years of Experience</label>
+                <input 
+                  type="number" 
+                  formControlName="yearsOfExperience" 
+                  class="form-control"
+                  [class.is-invalid]="skill.get('yearsOfExperience')?.invalid && skill.get('yearsOfExperience')?.touched"
+                >
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12 mb-3">
+                <label class="form-label">Certification (Optional)</label>
+                <input 
+                  type="text" 
+                  formControlName="certification" 
+                  class="form-control"
+                >
+              </div>
+            </div>
+            <div class="text-end">
+              <button 
+                *ngIf="skillEntries.length > 1" 
+                type="button" 
+                class="btn btn-danger" 
+                (click)="removeSkillEntry(i)"
+              >
+                <i class="bi bi-trash"></i> Remove Skill
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Submit Button -->
+      <div class="text-center">
+        <button 
+          type="submit" 
+          class="btn btn-primary btn-lg px-5"
+          [disabled]="jobApplicationForm.invalid"
+        >
+          Submit Application
+        </button>
+      </div>
+    </form>
+  </div>
