@@ -1,4 +1,13 @@
   <div class="container py-5">
+
+    <div *ngIf="showSuccessMessage" class="success-notification animate__animated animate__bounceIn">
+      <div class="success-content">
+        <svg xmlns="http://www.w3.org/2000/svg" class="success-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        <span>Application Submitted Successfully</span>
+      </div>
+    </div>
     <form [formGroup]="jobApplicationForm" (ngSubmit)="onSubmit()" class="job-application-form">
       <!-- Personal Information Section -->
       <div formGroupName="personalInfo" class="card mb-4">
@@ -331,7 +340,7 @@
           [disabled]="jobApplicationForm.invalid"
         >
           Submit Application
-        </button>
+        </button>  
       </div>
     </form>
   </div>
