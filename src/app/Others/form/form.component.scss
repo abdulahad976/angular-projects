@@ -63,3 +63,53 @@
       20%, 40%, 60%, 80% { transform: translateX(10px); }
     }
   }
+
+
+  .success-notification {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    max-width: 90%;
+    text-align: center;
+  }
+  
+  .success-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .success-icon {
+    width: 24px;
+    height: 24px;
+    stroke: white;
+  }
+  
+  /* Optional: Add animation library classes */
+  @keyframes bounceIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.3) translate(-50%, -50%);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.05) translate(-50%, -50%);
+    }
+    70% {
+      transform: scale(0.9) translate(-50%, -50%);
+    }
+    100% {
+      transform: scale(1) translate(-50%, -50%);
+    }
+  }

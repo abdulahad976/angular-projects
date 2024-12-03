@@ -1,7 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
+import { JobApplication } from '../../Models/job-applications.interface';
+import { JobStorageService } from '../../services/JobStorage/job-storage.service';
 
 @Component({
   selector: 'app-form',
@@ -11,7 +13,13 @@ import { RouterLink } from '@angular/router';
   styleUrl: './form.component.scss'
 })
 export class FormComponent implements OnInit {
+
+  jobStorageService = inject(JobStorageService);
+  router = inject(Router);
+
   jobApplicationForm: any;
+  showSuccessMessage = false;
+
 
   educationLevels = [
     'High School',
@@ -145,7 +153,16 @@ export class FormComponent implements OnInit {
 
   onSubmit() {
     if (this.jobApplicationForm.valid) {
-      console.log(this.jobApplicationForm.value);
+      const application: JobApplication = this.jobApplicationForm.value;
+      this.jobStorageService.saveApplication(application);
+      
+      // Show success message
+      this.showSuccessMessage = true;
+      this.jobApplicationForm.reset();
+      setTimeout(() => {
+        this.showSuccessMessage = false;
+        this.router.navigate(['/others']);
+      }, 3000);
     } else {
       this.markFormGroupTouched(this.jobApplicationForm);
     }
