@@ -1,0 +1,210 @@
+<!-- <div class="dashboard-container">
+    <div class="loading-spinner" *ngIf="isLoading">
+      <div class="spinner"></div>
+      <p>Loading users...</p>
+    </div>
+  
+    <div class="error-message" *ngIf="error">
+      <p>{{ error }}</p>
+      <button class="retry-btn" (click)="refreshData()">
+        <i class="fas fa-sync-alt"></i> Retry
+      </button>
+    </div>
+  
+    <div class="dashboard-content" *ngIf="!isLoading && !error">
+      <div class="stats-section" [class.minimized]="showUsers">
+        <div class="stats-content">
+          <div class="user-count-wrapper">
+            <div class="user-count-animation">
+              <span class="count-number">{{totalUsers}}</span>
+              <div class="animated-circle"></div>
+              <div class="animated-circle circle-2"></div>
+              <div class="animated-circle circle-3"></div>
+            </div>
+            <h2 class="count-text">Users Found in Database</h2>
+            <p class="subtext">Last updated: {{ users_data[0]?.lastUpdated | date:'medium' }}</p>
+          </div>
+  
+          <button class="view-users-btn" (click)="toggleUsers()" *ngIf="users_data.length > 0">
+            <div class="btn-content">
+              <span class="btn-text">{{ showUsers ? 'Hide Users List' : 'View All Users' }}</span>
+              <i class="fas" [class.fa-chevron-down]="!showUsers" [class.fa-chevron-up]="showUsers"></i>
+            </div>
+            <div class="btn-background"></div>
+          </button>
+        </div>
+      </div>
+  
+      <div class="users-grid" *ngIf="showUsers" [@fadeInOut]>
+        <div class="user-card" *ngFor="let user of users_data" [@cardAnimation] [attr.data-user-id]="user.id">
+          <div class="card-glass">
+            <div class="status-badge" [class.active]="user.isActive">
+              {{ user.isActive ? 'Active' : 'Inactive' }}
+            </div>
+  
+            <div class="user-avatar">
+              <span class="avatar-text">{{ user.name?.[0]?.toUpperCase() || 'U' }}</span>
+              <div class="avatar-ring"></div>
+            </div>
+  
+            <div class="user-info">
+              <h3 class="user-name">
+                {{ user.fullName }}
+                <i class="fas fa-check-circle" *ngIf="user.isVerified"></i>
+              </h3>
+  
+              <div class="user-details">
+                <div class="detail-item email">
+                  <i class="fas fa-envelope"></i>
+                  <span>{{ user.email }}</span>
+                </div>
+  
+                <div class="detail-item phone" *ngIf="user.phone">
+                  <i class="fas fa-phone"></i>
+                  <span>{{ user.phone }}</span>
+                </div>
+  
+                <div class="detail-item location" *ngIf="user.location">
+                  <i class="fas fa-map-marker-alt"></i>
+                  <span>{{ user.adrress }}</span>
+                </div>
+  
+                <div class="detail-item joined">
+                  <i class="fas fa-calendar-alt"></i>
+                  <span>Joined: {{ user.date | date:'mediumDate' }}</span>
+                </div>
+              </div>
+  
+              <div class="user-stats">
+                <div class="stat">
+                  <span class="stat-value">{{ user.posts || 0 }}</span>
+                  <span class="stat-label">Posts</span>
+                </div>
+                <div class="stat">
+                  <span class="stat-value">{{ user.followers || 0 }}</span>
+                  <span class="stat-label">Followers</span>
+                </div>
+                <div class="stat">
+                  <span class="stat-value">{{ user.following || 0 }}</span>
+                  <span class="stat-label">Following</span>
+                </div>
+              </div>
+            </div>
+  
+            <div class="card-actions">
+              <button class="action-btn edit-btn" title="Edit User">
+                <i class="fas fa-edit"></i>
+              </button>
+              <button class="action-btn delete-btn" (click)="deleteUser(user)" title="Delete User">
+                <i class="fas fa-trash"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="empty-state" *ngIf="users_data.length === 0">
+        <i class="fas fa-users"></i>
+        <h3>No Users Found</h3>
+        <p>There are currently no users in the database.</p>
+        <button class="refresh-btn" (click)="refreshData()">
+          <i class="fas fa-sync-alt"></i> Refresh Data
+        </button>
+      </div>
+    </div>
+  </div> -->
+
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+
+<!-- user-card.component.html -->
+<div class="cards-grid">
+  <p *ngIf="!usersArray.length && !isLoading" class="empty-message">No users found.</p>
+  <p *ngIf="isLoading" class="loading-message">Loading users, please wait...</p>
+
+
+  <div class="user-card" *ngFor="let user of usersArray; let i = index"
+       [style.--card-gradient]="getGradient(i)"
+       @cardAnimation>
+
+    <!-- Top Section -->
+    <div class="card-header">
+      <div class="profile-section">
+        <div class="avatar">{{user.name.charAt(0)}}</div>
+        <div class="user-intro">
+          <h3>{{user.name}}</h3>
+          <div class="badge">
+            <i class="bi bi-briefcase-fill"></i>
+            {{user.country}}
+          </div>
+        </div>
+      </div>
+      <button class="delete-button" (click)="onDelete(user, $event)">
+        <i class="bi bi-trash3"></i>
+      </button>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="contact-section">
+      <div class="contact-chip">
+        <i class="fas fa-envelope"></i>
+        <span>{{user.email}}</span>
+      </div>
+      <div class="contact-chip">
+        <i class="bi bi-telephone-forward-fill"></i>
+        <span>{{user.phone}}</span>
+      </div>
+    </div>
+
+    <!-- Info Tiles -->
+    <div class="info-tiles">
+      <div class="info-tile">
+        <div class="tile-icon">
+          <i class="bi bi-geo-alt-fill"></i>
+        </div>
+        <div class="tile-content">
+          <span class="tile-label">Location</span>
+          <span class="tile-value">{{user.city}}</span>
+        </div>
+      </div>
+
+      <div class="info-tile">
+        <div class="tile-icon">
+          <!--          <i class="bi bi-calendar2-heart-fill"></i>-->
+          <i class="fas fa-birthday-cake"></i>
+        </div>
+        <div class="tile-content">
+          <span class="tile-label">Birthday</span>
+          <span class="tile-value">{{user.dob | date:'mediumDate'}}</span>
+        </div>
+      </div>
+
+      <div class="info-tile">
+        <div class="tile-icon">
+          <i class="bi bi-person-fill"></i>
+        </div>
+        <div class="tile-content">
+          <span class="tile-label">Gender</span>
+          <span class="tile-value">{{user.gender}}</span>
+        </div>
+      </div>
+
+      <div class="info-tile">
+        <div class="tile-icon">
+          <i class="bi bi-pin-map-fill"></i>
+        </div>
+        <div class="tile-content">
+          <span class="tile-label">Region</span>
+          <span class="tile-value">{{user.region}}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Address Bar -->
+    <div class="address-bar">
+      <i class="bi bi-house-door-fill"></i>
+      <p>{{user.address}}, {{user.postal}}</p>
+    </div>
+  </div>
+</div>

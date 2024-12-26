@@ -1,7 +1,8 @@
 import { CommonModule, NgIf } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, Input, inject } from '@angular/core';
 import { LoginComponent } from '../login/login.component';
 import { AbstractControl, FormControl, FormGroup, ReactiveFormsModule, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
+import { ApisIntegrationService } from '../../services/apiIntegration/apis-integration.service';
 
 @Component({
   selector: 'app-signup',
@@ -11,6 +12,8 @@ import { AbstractControl, FormControl, FormGroup, ReactiveFormsModule, Validatio
   styleUrl: './signup.component.scss'
 })
 export class SignupComponent {
+
+  userApiService = inject(ApisIntegrationService)
 
  @Input() public isLogin = false;
 
@@ -97,14 +100,27 @@ export class SignupComponent {
   })
 
 
-  onSignUpSubmit(){
+  onSignUpSubmit() {
     if (this.signUpForm.invalid) {
       alert('Please fill in all required fields.');
       return;
     }
-    this.signupFormData = this.signUpForm.value
-    this.signUpForm.reset();
-    console.log(this.signupFormData);
+  
+    this.signupFormData = this.signUpForm.value;
+  
+    this.userApiService.addUser(this.signupFormData).subscribe({
+      next: (response) => {
+        console.log('Data posted successfully:', response);
+        alert('User signed up successfully!');
+        
+        this.signUpForm.reset();
+      },
+      error: (error) => {
+        console.error('Error posting data:', error);
+        alert('An error occurred while signing up. Please try again.');
+      },
+    });
   }
+  
 
 }

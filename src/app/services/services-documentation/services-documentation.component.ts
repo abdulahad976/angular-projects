@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
+import { ApisIntegrationService } from '../apiIntegration/apis-integration.service';
 
 @Component({
   selector: 'app-services-documentation',
