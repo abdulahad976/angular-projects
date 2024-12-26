@@ -21,6 +21,7 @@ import { PagingComponent } from '../../paging/paging.component';
 import { TabsComponent } from '../../tabs/tabs.component';
 import { CommonModule } from '@angular/common';
 import { SortTableComponent } from '../../sort-table/sort-table.component';
+import { RegisteredUsersComponent } from '../../registered-users/registered-users.component';
 
 @Component({
   selector: 'app-home-route',
@@ -30,7 +31,8 @@ import { SortTableComponent } from '../../sort-table/sort-table.component';
     TextloaderComponent,TwitterpostComponent, ModalComponent,
     QuoteComponent, ToggleComponent, RichTextViewerComponent,
     DebounceSearchComponent, SearchListComponent, CounterComponent,
-    TableComponent, PagingComponent, TabsComponent, SortTableComponent]
+    TableComponent, PagingComponent, TabsComponent, SortTableComponent,
+    RegisteredUsersComponent]
     ,
  templateUrl: './home-route.component.html',
   styleUrl: './home-route.component.scss'
